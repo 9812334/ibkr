@@ -1,0 +1,5 @@
+# Navigate to the directory
+$ cd /opt/sites/blog
+
+# Launch HTTP server
+$ python -m SimpleHTTPServer 8080

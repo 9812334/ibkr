@@ -1,0 +1,4 @@
+2024-05-03 18:37:13,201 ib_async.client INFO Connecting to 127.0.0.1:4001 with clientId 13...
+2024-05-03 18:37:13,201 ib_async.client INFO Disconnecting
+2024-05-03 18:37:13,201 ib_async.client ERROR API connection failed: ConnectionRefusedError(61, "Connect call failed ('127.0.0.1', 4001)")
+2024-05-03 18:37:13,201 ib_async.client ERROR Make sure API port on TWS/IBG is open
