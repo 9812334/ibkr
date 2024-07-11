@@ -62,6 +62,7 @@ def simple_scalp(strat):
     close_order_timestamp = None
     open_order_timestamp = None
     filled_order_timestamp = None
+    total_tick_counter = 0
 
     if strat["debug"]:
         proceed = input("Proceed? ")
@@ -102,7 +103,7 @@ def simple_scalp(strat):
 
             if ticker is None or len(ticker.domBids) == 0 or len(ticker.domAsks) == 0:
                 print(f"************ Issue getting orderbook tickers *************** ")
-                alert(True)
+                # alert(True)
                 ib.waitOnUpdate()
                 continue
 
@@ -112,6 +113,10 @@ def simple_scalp(strat):
                 price_ref = ticker.domAsks[0].price
             elif strat["open_ref"] == "mid":
                 price_ref = (ticker.domAsks[0].price + ticker.domBids[0].price) / 2
+            elif strat["open_ref"] == "max_bid_size":
+                price_ref = max(ticker.domBids, key=lambda x: x.size).price
+            elif strat["open_ref"] == "max_ask_size":
+                price_ref = max(ticker.domAsks, key=lambda x: x.size).price
             else:
                 print("************ Invalid open_ref *************** ")
                 ib.disconnect()
@@ -119,16 +124,31 @@ def simple_scalp(strat):
 
             limit_price = price_ref + strat["open_ticks"] * strat["tick_increment"]
 
+            balance_ratio = sum(bid.size for bid in ticker.domBids) / sum(ask.size for ask in ticker.domAsks)
+
+            # orderbook balance bias checks
+            if strat["open_ob_sum_bid_ask_size_ratio_min"] is not None:
+                if balance_ratio < strat["open_ob_sum_bid_ask_size_ratio_min"]:
+                    print(
+                        f"***** Bid/Ask Size ratio {balance_ratio} < {strat['open_ob_sum_bid_ask_size_ratio_min']}"
+                    )
+                    continue
+
+            if strat["open_ob_sum_bid_ask_size_ratio_max"] is not None:
+                if balance_ratio > strat["open_ob_sum_bid_ask_size_ratio_max"]:
+                    print(
+                        f"***** Bid/Ask Size ratio {balance_ratio} > {strat['open_ob_sum_bid_ask_size_ratio_max']}"
+                    )
+                    continue
+
             # open trade checks
             if limit_price > strat["open_max"]:
-                print(f"************ Limit price {limit_price} > {strat['open_max']} ***************")
-                print(f"Sleeping 5 seconds")
-                ib.sleep(5)
+                print(f"************ Limit price {limit_price} > {strat['open_max']}")
+                ib.sleep(1)
                 continue
             elif limit_price < strat["open_min"]:
                 print(f"************ Limit price {limit_price} < {strat['open_min']} ***************")
-                print(f"Sleeping 5 seconds")
-                ib.sleep(5)
+                ib.sleep(1)
                 continue
             else:
                 print(f"Pre-submitting order for open_trade limit price {limit_price}")
@@ -189,7 +209,7 @@ def simple_scalp(strat):
                     # ib.cancelOrder(open_order)
 
                     if strat['margin_check']:
-                        alert(False)
+                        # alert(False)
                         print("Retrying in 25 seconds...")
                         ib.sleep(25)
                         continue
@@ -210,17 +230,16 @@ def simple_scalp(strat):
                 open_trade = None
 
             elif open_trade.orderStatus.status == "Submitted" and close_trade is None:
-                print(
-                    f"Waiting to get filled on order #{open_trade.order.permId} ({open_trade.orderStatus.status})"
-                )
-
                 if open_order_timestamp is not None:
                     print(
-                        f"  {strat['pause_replace'] - (datetime.datetime.now() - open_order_timestamp).seconds} seconds"
+                        f"Waiting to get filled on order #{open_trade.order.permId} ({open_trade.orderStatus.status})"
+                    )
+                    print(
+                        f"... {strat['pause_replace'] - (datetime.datetime.now() - open_order_timestamp).seconds} seconds"
                     )
 
                 if (
-                    open_order_timestamp is None
+                    open_order_timestamp is not None
                     or datetime.datetime.now() - open_order_timestamp
                     > datetime.timedelta(seconds=strat["pause_replace"])
                 ):
@@ -233,6 +252,10 @@ def simple_scalp(strat):
                         price_ref = (
                             ticker.domAsks[0].price + ticker.domBids[0].price
                         ) / 2
+                    elif strat["open_ref"] == "max_bid_size":
+                        price_ref = max(ticker.domBids, key=lambda x: x.size).price
+                    elif strat["open_ref"] == "max_ask_size":
+                        price_ref = max(ticker.domAsks, key=lambda x: x.size).price
                     else:
                         raise Exception("Not implemented")
 
@@ -243,13 +266,9 @@ def simple_scalp(strat):
                     # open/modify trade checks
                     if limit_price > strat["open_max"]:
                         print(f"************ Limit price {limit_price} > {strat['open_max']} ***************")
-                        print(f"Sleeping 5 seconds")
-                        ib.sleep(5)
                         continue
                     elif limit_price < strat["open_min"]:
                         print(f"************ Limit price {limit_price} < {strat['open_min']} ***************")
-                        print(f"Sleeping 5 seconds")
-                        ib.sleep(5)
                         continue
                     else:
                         print(f"Modifying order limit price: {open_trade.order.lmtPrice}")
@@ -296,8 +315,9 @@ def simple_scalp(strat):
                     price_ref = (ticker.domAsks[0].price + ticker.domBids[0].price) / 2
                 else:
                     print("************ Invalid close_ref *************** ")
-                    ib.disconnect()
-                    exit()
+                    alert(True)
+                    ib.sleep(10)
+                    continue
 
                 limit_price = price_ref + strat["close_ticks"] * strat["tick_increment"]
 
@@ -317,7 +337,6 @@ def simple_scalp(strat):
 
                 if strat["live"]:
                     close_trade = ib.placeOrder(contract, close_order)
-                    ib.sleep(0.1)
 
                     # delay push until later for speed
                     push_notifications(
@@ -326,7 +345,7 @@ def simple_scalp(strat):
                     push_notifications(
                         f"CLOSE ORDER PLACED:: {close_trade.order}", strat["close_push"]
                     )
-                    alert(False)
+                    # alert(False)
                 else:
                     print(f"[NOT LIVE] CLOSE ORDER PLACED:: {close_order}")
                     # print(f"CLOSE ORDER PLACED:: {close_trade.order}")
@@ -337,15 +356,16 @@ def simple_scalp(strat):
 
         if close_trade is not None:
             if close_trade.orderStatus.status == "Filled":
-                print(f"Close trade filled @ {close_trade.orderStatus.avgFillPrice}")
-                print_line()
                 push_notifications(
                     f"CLOSE TRADE FILLED:: {close_trade.order}", strat["close_push"]
                 )
                 alert(True)
 
                 close_order_timestamp = datetime.datetime.now()
-
+                total_tick_counter += strat['close_qty'] * abs(
+                    close_trade.orderStatus.avgFillPrice
+                    - open_trade.orderStatus.avgFillPrice
+                ) / strat["tick_increment"]
                 open_trade = None
                 close_trade = None
 
@@ -369,28 +389,29 @@ def simple_scalp(strat):
 BUY_SCALP = {
     "margin_cushion_pct": 0,
     "account": IBKR_ACCOUNT_1,
-    "strategy": "BUY TO OPEN SCALP",
-    "contract": "NQU2024",
-    "contract_id": None,
-    "tick_increment": 0.25,
-    "open_qty": 1,
-    "open_type": "LIMIT",
-    "open_action": "BUY",
-    "open_orderbook_bias_ratio_min": 2,
-    "open_max": 20790,
-    "open_min": 0,
-    "open_ref": "bid",
     "close_qty": 1,
     "close_type": "LIMIT",
     "close_action": "SELL",
     "close_ref": "open_fill",
-    "open_ticks": -3,
-    "close_ticks": 6,
-    "open_permid": None,
+    "close_ticks": 4,
     "close_permid": None,
+    "strategy": "BUY TO OPEN SCALP",
+    "contract": "NQU2024",
+    "contract_id": None,
+    "open_qty": 1,
+    "open_type": "LIMIT",
+    "open_action": "BUY",
+    "open_ob_sum_bid_ask_size_ratio_min": 1,
+    "open_ob_sum_bid_ask_size_ratio_max": 30,
+    "open_min": 0,
+    "open_max": 20950,
+    "open_permid": None,
+    "open_ref": "max_bid_size",
+    "open_ticks": 1,
     "cancel_permid": None,
-    "pause_replace": 30,
+    "pause_replace": 1,
     "pause_restart": 30,
+    "tick_increment": 0.25,
 }
 
 SELL_SCALP = {
@@ -405,7 +426,8 @@ SELL_SCALP = {
     "open_min": 20075,
     "open_type": "LIMIT",
     "open_action": "SELL",
-    "open_orderbook_bias_ratio_min": 2,
+    "open_ob_sum_bid_ask_size_ratio_min": 2,
+    "open_ob_sum_bid_ask_size_ratio_max": 30,
     "open_ref": "ask",
     "close_qty": 1,
     "close_type": "LIMIT",
