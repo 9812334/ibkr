@@ -70,5 +70,6 @@
         "algorithm": "cpp",
         "filesystem": "cpp",
         "utility": "cpp"
-    }
+    },
+    "git.ignoreLimitWarning": true
 }

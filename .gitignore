@@ -6,3 +6,4 @@ build/
 
 # vscode
 .vscode/
+.venv/

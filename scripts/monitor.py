@@ -36,13 +36,13 @@ def monitor_overview(duration=5):
     
     while ib.sleep(duration):        
         print_clear()
-        print(f"-" * 50)
+        print("-" * 50)
 
         print_account_summary(accounts = ["U10394496"])
-        print(f"-" * 50)
+        print("-" * 50)
 
         current_executions = print_executions()
-        print(f"-" * 50)
+        print("-" * 50)
 
         if len(current_executions) != len(executions):
             alert()        
@@ -52,13 +52,13 @@ def monitor_overview(duration=5):
         if len(current_open_orders) != len(open_orders):
             ib.reqExecutions()
             
-        print(f"-" * 50)
+        print("-" * 50)
 
         current_positions = print_positions(contract=NQM4)
-        print(f"-" * 50)
+        print("-" * 50)
         
         print_orderbook()
-        print(f"-" * 50)
+        print("-" * 50)
 
         executions = current_executions
         open_orders = current_open_orders

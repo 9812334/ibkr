@@ -62,22 +62,22 @@ def monitor_overview(local_symbol, accounts = [IBKR_ACCOUNT_1], duration = 1):
         #     t1 = datetime.datetime.now().timestamp()
 
         print_account_summary(accounts=accounts)
-        print(f"-" * 50)
+        print("-" * 50)
 
         print_trades(status = 'Filled', tail = 10)
-        print(f"-" * 50)
+        print("-" * 50)
 
         print_trades(status="Submitted", tail=10)
-        print(f"-" * 50)
+        print("-" * 50)
 
         # current_executions = print_executions(tail = 6)
-        # print(f"-" * 50)
+        # print("-" * 50)
 
         current_positions = print_positions(contract=contract)
-        print(f"-" * 50)
+        print("-" * 50)
 
         print_orderbook(ticker=ticker)
-        print(f"-" * 50)
+        print("-" * 50)
 
         # executions = current_executions
         previous_orders = current_orders

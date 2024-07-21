@@ -52,16 +52,15 @@ def simple_scalp(strat):
                 print(f"Failed to cancel {cxl_order}")
 
     push_notifications(
-        f"{strat['strategy']} / {strat['open_ticks']}:{strat['close_ticks']} tickers / ({strat['pause_replace']}_replace_sec)({strat['pause_restart']}_restart_sec)"
+        f"{strat['strategy']} / {strat['open_ticks']}:{strat['close_ticks']} tickers / ({strat['pause_replace']}_replace_sec)({strat['pause_restart']}_restart_sec)",
     )
 
     open_trade, close_trade = get_open_close_trades(
         strat["open_permid"], strat["close_permid"], strat["push"]
     )
 
-    close_order_timestamp = None
-    open_order_timestamp = None
-    filled_order_timestamp = None
+    filled_close_order_ts = None
+    submitted_open_order_ts = None
     total_tick_counter = 0
 
     if strat["debug"]:
@@ -73,26 +72,24 @@ def simple_scalp(strat):
     while ib.waitOnUpdate():
         print_clear()
         print_trades(status = 'Filled', tail = 5)
-        print(f"-" * 50)
+        print("-" * 50)
 
         print_trades(status="Submitted", tail=5)
-        print(f"-" * 50)
+        print("-" * 50)
 
         print_strategy_summary(strat, open_trade, close_trade, ticker)
-        print(f"-" * 50)
+        print("-" * 50)
 
         print_positions(contract=contract)
-        print(f"-" * 50)
+        print("-" * 50)
 
         print_account_summary(accounts=[IBKR_ACCOUNT_1])
-        print(f"-" * 50)
+        print(f"Session Ticks: {total_tick_counter}")
+        print("-" * 50)
 
-        if close_order_timestamp is not None and (
-            datetime.datetime.now() - close_order_timestamp
-            < datetime.timedelta(seconds=strat["pause_restart"])
-        ):
+        if filled_close_order_ts is not None and (datetime.datetime.now() - filled_close_order_ts < datetime.timedelta(seconds=strat["pause_restart"])):
             print(
-                f'Waiting {strat["pause_restart"] - (datetime.datetime.now() - close_order_timestamp).seconds} seconds...'
+                f'Pause Restart: {strat["pause_restart"] - (datetime.datetime.now() - filled_close_order_ts).seconds} seconds ...'
             )
             continue
 
@@ -184,12 +181,10 @@ def simple_scalp(strat):
                     open_order_state.initMarginAfter
                 ) and net_liquidation_value - cushion > float(
                     open_order_state.maintMarginAfter
-                ):
-
+                ):                    
                     if strat["live"]:
                         open_trade = ib.placeOrder(contract, open_order)
                         ib.sleep(0.1)
-                        open_order_timestamp = datetime.datetime.now()
 
                         trade = open_trade
 
@@ -199,8 +194,11 @@ def simple_scalp(strat):
                         )
 
                     else:
-                        # TODO: you can mock trades here
+                        # TODO: mock trades here
                         print(f"[NOT LIVE] OPEN ORDER PLACED :: {open_order}")
+
+                    submitted_open_order_ts = datetime.datetime.now()
+
                 else:
                     print(
                         f"************ Failed Margin Check: Net Liq Value {net_liquidation_value} - {cushion} cushion < (initMarginAfter {open_order_state.initMarginAfter} | maintMarginAfter {open_order_state.maintMarginAfter}) *************** "
@@ -228,72 +226,67 @@ def simple_scalp(strat):
                     if trade_entry.status == "Cancelled":
                         push_notifications(f"{trade_entry}", strat["open_push"])
                 open_trade = None
+                submitted_open_order_ts = None
 
             elif open_trade.orderStatus.status == "Submitted" and close_trade is None:
-                if open_order_timestamp is not None:
+
+                if submitted_open_order_ts is not None:
                     print(
-                        f"Waiting to get filled on order #{open_trade.order.permId} ({open_trade.orderStatus.status})"
+                        f'Waiting to get filled on open order #{open_trade.order.permId} ({open_trade.orderStatus.status}) / {strat["pause_replace"] - (datetime.datetime.now() - filled_close_order_ts).seconds} seconds ...'
                     )
-                    print(
-                        f"... {strat['pause_replace'] - (datetime.datetime.now() - open_order_timestamp).seconds} seconds"
-                    )
+                    
+                    if datetime.datetime.now() - submitted_open_order_ts > datetime.timedelta(seconds=strat["pause_replace"]):
+                        # find the price of opening the trade
+                        if strat["open_ref"] == "bid":
+                            price_ref = ticker.domBids[0].price
+                        elif strat["open_ref"] == "ask":
+                            price_ref = ticker.domAsks[0].price
+                        elif strat["open_ref"] == "mid":
+                            price_ref = (
+                                ticker.domAsks[0].price + ticker.domBids[0].price
+                            ) / 2
+                        elif strat["open_ref"] == "max_bid_size":
+                            price_ref = max(ticker.domBids, key=lambda x: x.size).price
+                        elif strat["open_ref"] == "max_ask_size":
+                            price_ref = max(ticker.domAsks, key=lambda x: x.size).price
+                        else:
+                            raise Exception("Not implemented")
 
-                if (
-                    open_order_timestamp is not None
-                    or datetime.datetime.now() - open_order_timestamp
-                    > datetime.timedelta(seconds=strat["pause_replace"])
-                ):
-                    # find the price of opening the trade
-                    if strat["open_ref"] == "bid":
-                        price_ref = ticker.domBids[0].price
-                    elif strat["open_ref"] == "ask":
-                        price_ref = ticker.domAsks[0].price
-                    elif strat["open_ref"] == "mid":
-                        price_ref = (
-                            ticker.domAsks[0].price + ticker.domBids[0].price
-                        ) / 2
-                    elif strat["open_ref"] == "max_bid_size":
-                        price_ref = max(ticker.domBids, key=lambda x: x.size).price
-                    elif strat["open_ref"] == "max_ask_size":
-                        price_ref = max(ticker.domAsks, key=lambda x: x.size).price
-                    else:
-                        raise Exception("Not implemented")
-
-                    limit_price = (
-                        price_ref + strat["open_ticks"] * strat["tick_increment"]
-                    )
-
-                    # open/modify trade checks
-                    if limit_price > strat["open_max"]:
-                        print(f"************ Limit price {limit_price} > {strat['open_max']} ***************")
-                        continue
-                    elif limit_price < strat["open_min"]:
-                        print(f"************ Limit price {limit_price} < {strat['open_min']} ***************")
-                        continue
-                    else:
-                        print(f"Modifying order limit price: {open_trade.order.lmtPrice}")
-
-                    if open_trade.order.lmtPrice == limit_price:
-                        print(
-                            f"Limit price of open_trade order already at {limit_price}"
+                        limit_price = (
+                            price_ref + strat["open_ticks"] * strat["tick_increment"]
                         )
-                    else:
-                        open_trade.order.lmtPrice = limit_price
 
-                        print(f"Modifying open_trade order: {open_trade.order}")
+                        # open/modify trade checks
+                        if limit_price > strat["open_max"]:
+                            print(f"************ Limit price {limit_price} > {strat['open_max']} ***************")
+                            continue
+                        elif limit_price < strat["open_min"]:
+                            print(f"************ Limit price {limit_price} < {strat['open_min']} ***************")
+                            continue
+                        else:
+                            print(f"Modifying order limit price: {open_trade.order.lmtPrice}")
 
-                        if strat["live"]:
-                            open_trade = ib.placeOrder(contract, open_trade.order)
-                            push_notifications(
-                                f"MODIFIED ORDER PLACED:: {open_trade.order}",
-                                strat["modify_push"],
+                        submitted_open_order_ts = datetime.datetime.now()
+
+                        if open_trade.order.lmtPrice == limit_price:
+                            print(
+                                f"Limit price of open_trade order already at {limit_price}"
                             )
                         else:
-                            print(
-                                f"[NOT LIVE] MODIFIED ORDER PLACED:: {open_trade.order}"
-                            )
+                            open_trade.order.lmtPrice = limit_price
 
-                    open_order_timestamp = datetime.datetime.now()
+                            print(f"Modifying open_trade order: {open_trade.order}")
+
+                            if strat["live"]:
+                                open_trade = ib.placeOrder(contract, open_trade.order)
+                                push_notifications(
+                                    f"MODIFIED ORDER PLACED:: {open_trade.order}",
+                                    strat["modify_push"],
+                                )
+                            else:
+                                print(
+                                    f"[NOT LIVE] MODIFIED ORDER PLACED:: {open_trade.order}"
+                                )
 
             elif open_trade.orderStatus.status == "Filled" and close_trade is None:
                 exec_price = open_trade.fills[0].execution.price
@@ -350,8 +343,6 @@ def simple_scalp(strat):
                     print(f"[NOT LIVE] CLOSE ORDER PLACED:: {close_order}")
                     # print(f"CLOSE ORDER PLACED:: {close_trade.order}")
 
-                filled_order_timestamp = datetime.datetime.now()
-
                 refresh()
 
         if close_trade is not None:
@@ -361,14 +352,17 @@ def simple_scalp(strat):
                 )
                 alert(True)
 
-                close_order_timestamp = datetime.datetime.now()
+                submitted_open_order_ts = None
+                filled_close_order_ts = datetime.datetime.now()
+
                 total_tick_counter += strat['close_qty'] * abs(
                     close_trade.orderStatus.avgFillPrice
                     - open_trade.orderStatus.avgFillPrice
                 ) / strat["tick_increment"]
+
                 open_trade = None
                 close_trade = None
-
+                
                 refresh()
 
             elif (
@@ -389,28 +383,28 @@ def simple_scalp(strat):
 BUY_SCALP = {
     "margin_cushion_pct": 0,
     "account": IBKR_ACCOUNT_1,
-    "close_qty": 1,
+    "close_qty": 2,
     "close_type": "LIMIT",
     "close_action": "SELL",
     "close_ref": "open_fill",
-    "close_ticks": 4,
     "close_permid": None,
     "strategy": "BUY TO OPEN SCALP",
     "contract": "NQU2024",
     "contract_id": None,
-    "open_qty": 1,
+    "open_qty": 2,
     "open_type": "LIMIT",
     "open_action": "BUY",
-    "open_ob_sum_bid_ask_size_ratio_min": 1,
+    "open_ob_sum_bid_ask_size_ratio_min": 0.1,
     "open_ob_sum_bid_ask_size_ratio_max": 30,
     "open_min": 0,
     "open_max": 20950,
     "open_permid": None,
     "open_ref": "max_bid_size",
-    "open_ticks": 1,
+    "open_ticks": -20,
+    "close_ticks": 10,
     "cancel_permid": None,
-    "pause_replace": 1,
-    "pause_restart": 30,
+    "pause_replace": 60,
+    "pause_restart": 15,
     "tick_increment": 0.25,
 }
 
@@ -421,25 +415,25 @@ SELL_SCALP = {
     "contract": "NQU2024",
     "contract_id": 637533450,
     "tick_increment": 0.25,
-    "open_qty": 1,
+    "open_qty": 2,
     "open_max": 23475,
     "open_min": 20075,
     "open_type": "LIMIT",
     "open_action": "SELL",
-    "open_ob_sum_bid_ask_size_ratio_min": 2,
+    "open_ob_sum_bid_ask_size_ratio_min": 0.1,
     "open_ob_sum_bid_ask_size_ratio_max": 30,
     "open_ref": "ask",
-    "close_qty": 1,
+    "close_qty": 2,
     "close_type": "LIMIT",
     "close_action": "BUY",
     "close_ref": "open_fill",
     "open_permid": None,
     "close_permid": None,
     "cancel_permid": None,
-    "open_ticks": 10,
+    "open_ticks": 5,
     "close_ticks": -10,
     "pause_replace": 15,
-    "pause_restart": 15,
+    "pause_restart": 10,
 }
 
 
