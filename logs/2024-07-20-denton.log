@@ -1,0 +1,12 @@
+2024-07-20 19:38:36,179 ib_async.client INFO Connecting to 127.0.0.1:4001 with clientId 359...
+2024-07-20 19:38:36,180 ib_async.client INFO Connected
+2024-07-20 19:38:36,182 ib_async.client INFO Disconnected.
+2024-07-20 19:38:40,181 ib_async.client INFO Disconnecting
+2024-07-20 19:38:40,182 ib_async.client ERROR API connection failed: TimeoutError()
+2024-07-20 19:38:56,526 ib_async.client INFO Connecting to 127.0.0.1:4000 with clientId 10...
+2024-07-20 19:38:56,527 ib_async.client INFO Disconnecting
+2024-07-20 19:38:56,527 ib_async.client ERROR API connection failed: ConnectionRefusedError(111, "Connect call failed ('127.0.0.1', 4000)")
+2024-07-20 19:38:56,527 ib_async.client ERROR Make sure API port on TWS/IBG is open
+2024-07-20 19:39:34,315 ib_async.client INFO Connecting to 127.0.0.1:4001 with clientId 419...
+2024-07-20 19:39:34,316 ib_async.client INFO Connected
+2024-07-20 19:39:34,317 ib_async.client INFO Disconnected.
