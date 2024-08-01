@@ -1,4 +1,0 @@
-2024-06-24 21:11:47,443 ib_async.client INFO Connecting to 192.168.1.36:4001 with clientId 70...
-2024-06-24 21:11:47,465 ib_async.client INFO Disconnecting
-2024-06-24 21:11:47,466 ib_async.client ERROR API connection failed: ConnectionRefusedError(61, "Connect call failed ('192.168.1.36', 4001)")
-2024-06-24 21:11:47,466 ib_async.client ERROR Make sure API port on TWS/IBG is open
