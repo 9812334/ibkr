@@ -94,14 +94,12 @@ def ticker_contract_init(contract_id):
     return ticker, contract
 
 
-def ticker_init(local_symbol):
+def ticker_init(contract_id = None):
 
-    if local_symbol == "NQM2024":
-        contract = Contract(conId=620730920)
-    elif local_symbol == "NQU2024":
-        contract = Contract(conId=637533450)
-    else:
-        raise Exception("Not implemented contract")
+    if contract_id is None:
+        raise Exception("Contract ID not found")
+    
+    contract = Contract(conId=contract_id)
 
     ib.qualifyContracts(contract)
     ticker = ib.reqMktDepth(contract=contract, isSmartDepth=True)
@@ -186,11 +184,19 @@ def print_executions(cols = ["time", "side", "price", "permId", "shares"], tail 
 
     return executions_df
 
-def print_trades(status = 'Filled', tail = 10):
+def print_trades(status = 'Filled', tail = 10, symbol = None):
     trades = ib.trades()
-    trades.sort(key=lambda trade: trade.order.permId)
+    trades.sort(key=lambda trade: str(trade.order.permId))
 
-    trades_df = util.df([t for t in trades if t.orderStatus.status == status])
+    trades_f = trades
+
+    if symbol:
+        trades_f = [t for t in trades_f if t.contract.localSymbol == symbol]
+
+    if status:
+        trades_f = [t for t in trades_f if t.orderStatus.status == status]
+
+    trades_df = util.df([t for t in trades_f])
 
     if trades_df is None:
         print(f"{status}: 0")

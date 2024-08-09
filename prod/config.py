@@ -17,6 +17,11 @@ IBKR_PORT = 4001
 import random
 CLIENT_ID = random.randint(1, 999)
 
+CONTRACT_SYM = {
+    "NQU4": 637533450,
+    "MNQU4": 637533593,
+    "RTYU4": 637533627,
+}
 
 ORDER_COLS = [
     "localSymbol",
@@ -52,4 +57,3 @@ OPEN_TRADE_COLS = [
     "totalQuantity",
     "remaining",
 ]
-

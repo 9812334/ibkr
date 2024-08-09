@@ -26,9 +26,7 @@ def simple_scalp(strat):
 
         return open_trade, close_trade
 
-    local_symbol = strat["contract"]
-
-    ticker, contract = ticker_init(local_symbol=local_symbol)
+    ticker, contract = ticker_init(contract_id = strat['contract_id'])
 
     # def onTickerUpdate(ticker):
     #     print(ticker.time, ' ', ticker.domBids[0].price)
@@ -51,9 +49,10 @@ def simple_scalp(strat):
             else:
                 print(f"Failed to cancel {cxl_order}")
 
-    push_notifications(
-        f"{strat['strategy']} / {strat['open_ticks']}:{strat['close_ticks']} tickers / ({strat['pause_replace']}_replace_sec)({strat['pause_restart']}_restart_sec)",
-    )
+    if strat["push"]:
+        push_notifications(
+            f"{strat['strategy']} / {strat['open_ticks']}:{strat['close_ticks']} tickers / ({strat['pause_replace']}_replace_sec)({strat['pause_restart']}_restart_sec)",
+        )
 
     open_trade, close_trade = get_open_close_trades(
         strat["open_permid"], strat["close_permid"], strat["push"]
@@ -71,16 +70,16 @@ def simple_scalp(strat):
 
     while ib.waitOnUpdate():
         print_clear()
-        print_trades(status = 'Filled', tail = 5)
+        print_trades(status = 'Filled', tail = 5, symbol = strat["contract"])
         print("-" * 50)
 
-        print_trades(status="Submitted", tail=5)
+        print_trades(status="Submitted", tail=5, sym = strat["contract"])
         print("-" * 50)
 
         print_strategy_summary(strat, open_trade, close_trade, ticker)
         print("-" * 50)
 
-        print_positions(contract=contract)
+        print_positions(contract=contract, sym=strat["contract"])
         print("-" * 50)
 
         print_account_summary(accounts=[IBKR_ACCOUNT_1])
@@ -234,7 +233,7 @@ def simple_scalp(strat):
                     print(
                         f'Waiting to get filled on open order #{open_trade.order.permId} ({open_trade.orderStatus.status}) / {strat["pause_replace"] - (datetime.datetime.now() - filled_close_order_ts).seconds} seconds ...'
                     )
-                    
+
                     if datetime.datetime.now() - submitted_open_order_ts > datetime.timedelta(seconds=strat["pause_replace"]):
                         # find the price of opening the trade
                         if strat["open_ref"] == "bid":
@@ -362,7 +361,7 @@ def simple_scalp(strat):
 
                 open_trade = None
                 close_trade = None
-                
+
                 refresh()
 
             elif (
@@ -440,7 +439,8 @@ import argparse
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='My Python Script')
-    parser.add_argument('--strat', type=str, help='Strategy', default='buy')
+    parser.add_argument('--contract', type=str, help='Contract', default='NQU4')
+    parser.add_argument('--strat', type=str, help='Strategy', default='sell')
     parser.add_argument("--open_id", type=int, help="Open ID", default=None)
     parser.add_argument('--close_id', type=int, help='Close ID', default=None)
     parser.add_argument("--cancel_id", type=int, help="Cancel ID", default=None)
@@ -469,59 +469,27 @@ if __name__ == "__main__":
         ib.disconnect()
         exit(0)
 
-    if args.open_max is not None:
-        STRATEGY["open_max"] = int(args.open_max)
+    STRATEGY["contract"] = (
+        args.contract if args.contract is not None else STRATEGY["contract"]
+    )
+    
+    STRATEGY["contract_id"] = CONTRACT_SYM[STRATEGY["contract"]]
 
-    if args.open_min is not None:
-        STRATEGY["open_min"] = int(args.open_min)
-
-    if args.open_ticks is not None:
-        STRATEGY["open_ticks"] = int(args.open_ticks)
-
-    if args.close_ticks is not None:
-        STRATEGY["close_ticks"] = args.close_ticks
-
-    if args.push is not None:    
-        STRATEGY["push"] = args.push
-
-    if args.debug is not None:
-        STRATEGY["debug"] = args.debug
-
-    if args.margin_check is not None:
-        STRATEGY["margin_check"] = args.margin_check
-
-    if args.modify_push is not None:
-        STRATEGY["modify_push"] = args.modify_push
-
-    if args.open_max is not None:
-        STRATEGY["open_max"] = args.open_max
-
-    if args.open_min is not None:
-        STRATEGY["open_min"] = args.open_min
-
-    if args.open_id is not None:
-        STRATEGY["open_permid"] = args.open_id
-
-    if args.close_id is not None:
-        STRATEGY["close_permid"] = args.close_id
-
-    if args.open_push is not None:
-        STRATEGY["open_push"] = args.open_push
-
-    if args.close_push is not None:
-        STRATEGY["close_push"] = args.close_push
-
-    if args.cancel_id is not None:
-        STRATEGY["cancel_permid"] = args.cancel_id
-
-    if args.live is not None:
-        STRATEGY["live"] = args.live
-
-    if args.pause_replace is not None:
-        STRATEGY["pause_replace"] = args.pause_replace
-
-    if args.pause_restart is not None:
-        STRATEGY["pause_restart"] = args.pause_restart
+    STRATEGY["open_max"] = int(args.open_max) if args.open_max is not None else STRATEGY["open_max"]
+    STRATEGY["open_min"] = int(args.open_min) if args.open_min is not None else STRATEGY["open_min"]
+    STRATEGY["open_ticks"] = int(args.open_ticks) if args.open_ticks is not None else STRATEGY["open_ticks"]
+    STRATEGY["close_ticks"] = int(args.close_ticks) if args.close_ticks is not None else STRATEGY["close_ticks"]
+    STRATEGY["open_permid"] = int(args.open_id) if args.open_id is not None else STRATEGY["open_permid"]
+    STRATEGY["close_permid"] = int(args.close_id) if args.close_id is not None else STRATEGY["close_permid"]
+    STRATEGY["open_push"] = args.open_push if args.open_push is not None else STRATEGY["open_push"]
+    STRATEGY["close_push"] = args.close_push if args.close_push is not None else STRATEGY["close_push"]
+    STRATEGY["push"] = args.push if args.push is not None else STRATEGY["push"]
+    STRATEGY["debug"] = args.debug if args.debug is not None else STRATEGY["debug"]
+    STRATEGY["margin_check"] = args.margin_check if args.margin_check is not None else STRATEGY["margin_check"]
+    STRATEGY["modify_push"] = args.modify_push if args.modify_push is not None else STRATEGY["modify_push"]
+    STRATEGY["live"] = args.live if args.live is not None else STRATEGY["live"]
+    STRATEGY["pause_replace"] = args.pause_replace if args.pause_replace is not None else STRATEGY["pause_replace"]
+    STRATEGY["pause_restart"] = args.pause_restart if args.pause_restart is not None else STRATEGY["pause_restart"]
 
     try:
         pprint.pprint(f"STRATEGY CONFIG: \n {STRATEGY}")

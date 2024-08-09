@@ -13,8 +13,8 @@ parser.add_argument(
 parser.add_argument(
     "--sym",
     type=str,
-    default="NQU2024",
-    help="Duration for monitoring overview (in seconds)",
+    default="RTYU4",
+    help="Symbol for monitoring overview (eg RTYU4)",
 )
 parser.add_argument(
     "--push",
@@ -34,12 +34,13 @@ args = parser.parse_args()
 import datetime
 
 
+
 def monitor_overview(local_symbol, accounts = [IBKR_ACCOUNT_1], duration = 1):
     executions = []
     positions = []
     previous_orders = []
 
-    ticker, contract = ticker_init(local_symbol= local_symbol)
+    ticker, contract = ticker_init(contract_id = CONTRACT_SYM[local_symbol])
 
     # every 5 seconds reqExecutions()
     t1 = datetime.datetime.now().timestamp()
@@ -51,7 +52,7 @@ def monitor_overview(local_symbol, accounts = [IBKR_ACCOUNT_1], duration = 1):
         if len(previous_orders) != len(current_orders):
             alert()
             # ib.reqPositions()
-            
+
         ib.reqPositions()
         ib.reqAllOpenOrders()
         print_clear()
@@ -61,10 +62,13 @@ def monitor_overview(local_symbol, accounts = [IBKR_ACCOUNT_1], duration = 1):
 
         #     t1 = datetime.datetime.now().timestamp()
 
+        current_positions = print_positions(contract=contract)
+        print("-" * 50)
+
         print_account_summary(accounts=accounts)
         print("-" * 50)
 
-        print_trades(status = 'Filled', tail = 10)
+        print_trades(status = 'Filled', tail = 10, symbol = local_symbol)
         print("-" * 50)
 
         print_trades(status="Submitted", tail=10)
@@ -72,9 +76,6 @@ def monitor_overview(local_symbol, accounts = [IBKR_ACCOUNT_1], duration = 1):
 
         # current_executions = print_executions(tail = 6)
         # print("-" * 50)
-
-        current_positions = print_positions(contract=contract)
-        print("-" * 50)
 
         print_orderbook(ticker=ticker)
         print("-" * 50)
