@@ -1,0 +1,9 @@
+# test files
+*.csv
+
+# build
+build/
+
+# vscode
+.vscode/
+.venv/
