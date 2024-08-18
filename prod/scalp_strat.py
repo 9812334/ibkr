@@ -73,13 +73,13 @@ def simple_scalp(strat):
         print_trades(status = 'Filled', tail = 5, symbol = strat["contract"])
         print("-" * 50)
 
-        print_trades(status="Submitted", tail=5, sym = strat["contract"])
+        print_trades(status="Submitted", tail=5, symbol=strat["contract"])
         print("-" * 50)
 
         print_strategy_summary(strat, open_trade, close_trade, ticker)
         print("-" * 50)
 
-        print_positions(contract=contract, sym=strat["contract"])
+        print_positions(contract=contract)
         print("-" * 50)
 
         print_account_summary(accounts=[IBKR_ACCOUNT_1])
@@ -94,6 +94,8 @@ def simple_scalp(strat):
 
         # execution part - first order of the strategy
         if open_trade is None and close_trade is None:
+            ib.reqPositions()
+
             action = strat["open_action"]
             qty = strat["open_qty"]
 
@@ -171,7 +173,9 @@ def simple_scalp(strat):
                 accountSummary = util.df(ib.accountSummary(account=strat["account"]))
 
                 net_liquidation_value = float(
-                    accountSummary[accountSummary["tag"] == "NetLiquidation"]["value"]
+                    accountSummary[
+                        accountSummary["tag"] == "NetLiquidation"
+                    ].value.iloc[0]
                 )
 
                 cushion = net_liquidation_value * strat["margin_cushion_pct"] / 100
@@ -180,7 +184,7 @@ def simple_scalp(strat):
                     open_order_state.initMarginAfter
                 ) and net_liquidation_value - cushion > float(
                     open_order_state.maintMarginAfter
-                ):                    
+                ):
                     if strat["live"]:
                         open_trade = ib.placeOrder(contract, open_order)
                         ib.sleep(0.1)
@@ -231,7 +235,7 @@ def simple_scalp(strat):
 
                 if submitted_open_order_ts is not None:
                     print(
-                        f'Waiting to get filled on open order #{open_trade.order.permId} ({open_trade.orderStatus.status}) / {strat["pause_replace"] - (datetime.datetime.now() - filled_close_order_ts).seconds} seconds ...'
+                        f'Waiting to get filled on open order #{open_trade.order.permId} ({open_trade.orderStatus.status}) / {strat["pause_replace"] - (datetime.datetime.now() - submitted_open_order_ts).seconds} seconds ...'
                     )
 
                     if datetime.datetime.now() - submitted_open_order_ts > datetime.timedelta(seconds=strat["pause_replace"]):
@@ -288,6 +292,7 @@ def simple_scalp(strat):
                                 )
 
             elif open_trade.orderStatus.status == "Filled" and close_trade is None:
+                ib.reqPositions()
                 exec_price = open_trade.fills[0].execution.price
                 print(
                     f"Filled on open_trade: {open_trade.orderStatus.status} {exec_price} {open_trade.fills[0].execution.side}"
@@ -379,7 +384,7 @@ def simple_scalp(strat):
                 )
 
 
-BUY_SCALP = {
+BUY_SCALP_MNQ = {
     "margin_cushion_pct": 0,
     "account": IBKR_ACCOUNT_1,
     "close_qty": 2,
@@ -388,59 +393,30 @@ BUY_SCALP = {
     "close_ref": "open_fill",
     "close_permid": None,
     "strategy": "BUY TO OPEN SCALP",
-    "contract": "NQU2024",
-    "contract_id": None,
+    "contract": "MNQU4",
     "open_qty": 2,
     "open_type": "LIMIT",
     "open_action": "BUY",
-    "open_ob_sum_bid_ask_size_ratio_min": 1,
-    "open_ob_sum_bid_ask_size_ratio_max": 30,
+    "open_ob_sum_bid_ask_size_ratio_min": 0,
+    "open_ob_sum_bid_ask_size_ratio_max": 1,
     "open_min": 0,
-    "open_max": 20950,
+    "open_max": 19147,
     "open_permid": None,
     "open_ref": "max_bid_size",
-    "open_ticks": 1,
+    "open_ticks": -20,
+    "close_ticks": 120,
     "cancel_permid": None,
     "pause_replace": 60,
     "pause_restart": 15,
-    "tick_increment": 0.25,
+    "tick_increment": 0.10,
 }
-
-SELL_SCALP = {
-    "margin_cushion_pct": 0,
-    "account": IBKR_ACCOUNT_1,
-    "strategy": "SELL TO OPEN SCALP",
-    "contract": "NQU2024",
-    "contract_id": 637533450,
-    "tick_increment": 0.25,
-    "open_qty": 2,
-    "open_max": 23475,
-    "open_min": 20075,
-    "open_type": "LIMIT",
-    "open_action": "SELL",
-    "open_ob_sum_bid_ask_size_ratio_min": 2,
-    "open_ob_sum_bid_ask_size_ratio_max": 30,
-    "open_ref": "ask",
-    "close_qty": 2,
-    "close_type": "LIMIT",
-    "close_action": "BUY",
-    "close_ref": "open_fill",
-    "open_permid": None,
-    "close_permid": None,
-    "cancel_permid": None,
-    "open_ticks": 10,
-    "close_ticks": -10,
-    "pause_replace": 15,
-    "pause_restart": 10,
-}
-
 
 import argparse
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='My Python Script')
-    parser.add_argument('--contract', type=str, help='Contract', default='NQU4')
-    parser.add_argument('--strat', type=str, help='Strategy', default='sell')
+    parser.add_argument('--contract', type=str, help='Contract', default='MNQU4')
+    parser.add_argument('--strat', type=str, help='Strategy', default='buy')
     parser.add_argument("--open_id", type=int, help="Open ID", default=None)
     parser.add_argument('--close_id', type=int, help='Close ID', default=None)
     parser.add_argument("--cancel_id", type=int, help="Cancel ID", default=None)
@@ -452,7 +428,7 @@ if __name__ == "__main__":
     parser.add_argument("--open_push", type=bool, help="Open Push", default=True)
     parser.add_argument("--modify_push", type=bool, help="Modify Push", default=False)
     parser.add_argument("--close_push", type=bool, help="Close Push", default=True)
-    parser.add_argument("--push", type=bool, help="Push", default=True)
+    parser.add_argument("--push", type=bool, help="Push", default=False)
     parser.add_argument("--live", type=bool, help="Live", default=True)
     parser.add_argument("--margin_check", type=bool, help="Margin Check", default=True)
     parser.add_argument("--pause_replace", type=int, help="Pause Replace (sec)", default=None)
@@ -461,9 +437,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.strat == "buy" or args.strat == "BUY_SCALP":
-        STRATEGY = BUY_SCALP
-    elif args.strat == "sell" or args.strat == "SELL_SCALP":
-        STRATEGY = SELL_SCALP
+        STRATEGY = BUY_SCALP_MNQ
     else:
         print(f"*** Invalid strategy {args.strat} ***")
         ib.disconnect()
@@ -472,7 +446,7 @@ if __name__ == "__main__":
     STRATEGY["contract"] = (
         args.contract if args.contract is not None else STRATEGY["contract"]
     )
-    
+
     STRATEGY["contract_id"] = CONTRACT_SYM[STRATEGY["contract"]]
 
     STRATEGY["open_max"] = int(args.open_max) if args.open_max is not None else STRATEGY["open_max"]

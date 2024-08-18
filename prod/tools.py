@@ -44,7 +44,7 @@ def push_notifications(msg="Hello world!", push = True):
             # body = f"[{datetime.datetime.now().strftime('%H:%M:%S')}] {body}"
             data = parse.urlencode({"text": body}).encode()
             req = request.Request(
-                "https://api.chanify.net/v1/sender/CICswLUGEiJBQUZIR0pJQ0VVNkxUTlZCMk1DRElCWU1RSlNWMktCS0NFIgIIAQ.vj8gcfxM4jD9Zv0mBMSlFlY51EL_jC5dB8LWdWX1tAs",
+                "https://api.chanify.net/v1/sender/CICSxbkGEiJBQUZIR0pJQ0VVNkxUTlZCMk1DRElCWU1RSlNWMktCS0NFGhT5nPTBYSkfhOxpPzA3gUOmE5Y6giIECAEQAQ.6RBLm4Ue9BZlA_BAGoDk0zqveLeOTjuPm046IMPvV3A",
                 data=data,
             )
             request.urlopen(req)

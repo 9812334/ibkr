@@ -1,0 +1,693 @@
+2024-04-30 10:18:37,393 - __main__ - INFO - This is an info message
+2024-04-30 10:18:37,393 - __main__ - WARNING - This is a warning message
+2024-04-30 10:18:37,396 - __main__ - ERROR - This is an error message
+2024-04-30 10:43:32,189 - __main__ - INFO - This is an info message
+2024-04-30 10:43:32,189 - __main__ - INFO - This is an info message
+2024-04-30 10:43:32,189 - __main__ - WARNING - This is a warning message
+2024-04-30 10:43:32,189 - __main__ - WARNING - This is a warning message
+2024-04-30 10:43:32,200 - __main__ - ERROR - This is an error message
+2024-04-30 10:43:32,200 - __main__ - ERROR - This is an error message
+2024-04-30 10:55:53,932 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'bid', 'open_ticks': 10, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 10:55:53,932 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'bid', 'open_ticks': 10, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 10:55:53,942 - __main__ - INFO - OPEN ORDER::
+2024-04-30 10:55:53,942 - __main__ - INFO - OPEN ORDER::
+2024-04-30 10:56:05,789 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'bid', 'open_ticks': 10, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 10:56:05,789 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'bid', 'open_ticks': 10, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 10:56:05,798 - __main__ - INFO - OPEN ORDER::
+2024-04-30 10:56:05,798 - __main__ - INFO - OPEN ORDER::
+2024-04-30 10:56:05,800 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17747.25
+2024-04-30 10:56:05,800 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17747.25
+2024-04-30 10:56:07,330 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 10:56:07,330 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 10:56:07,332 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 10:56:07,332 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 10:56:07,358 - __main__ - INFO - Current position:
+2024-04-30 10:56:07,358 - __main__ - INFO - Current position:
+2024-04-30 10:56:07,360 - __main__ - INFO - NQ:  -6.0 @ 17788.3626008525
+2024-04-30 10:56:07,360 - __main__ - INFO - NQ:  -6.0 @ 17788.3626008525
+2024-04-30 10:56:12,372 - __main__ - INFO - OPEN ORDER::
+2024-04-30 10:56:12,372 - __main__ - INFO - OPEN ORDER::
+2024-04-30 10:56:12,373 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17747.25
+2024-04-30 10:56:12,373 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17747.25
+2024-04-30 10:56:13,910 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 10:56:13,910 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 10:56:13,910 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 10:56:13,910 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 10:56:13,924 - __main__ - INFO - Current position:
+2024-04-30 10:56:13,924 - __main__ - INFO - Current position:
+2024-04-30 10:56:13,924 - __main__ - INFO - NQ:  -6.0 @ 17788.3626008525
+2024-04-30 10:56:13,924 - __main__ - INFO - NQ:  -6.0 @ 17788.3626008525
+2024-04-30 11:33:54,422 - __main__ - INFO - This is an info message
+2024-04-30 11:33:54,422 - __main__ - INFO - This is an info message
+2024-04-30 11:33:54,422 - __main__ - INFO - This is an info message
+2024-04-30 11:33:54,424 - __main__ - WARNING - This is a warning message
+2024-04-30 11:33:54,424 - __main__ - WARNING - This is a warning message
+2024-04-30 11:33:54,424 - __main__ - WARNING - This is a warning message
+2024-04-30 11:33:54,433 - __main__ - ERROR - This is an error message
+2024-04-30 11:33:54,433 - __main__ - ERROR - This is an error message
+2024-04-30 11:33:54,433 - __main__ - ERROR - This is an error message
+2024-04-30 11:34:49,896 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'ask', 'open_ticks': 15, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 11:34:49,896 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'ask', 'open_ticks': 15, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 11:34:49,896 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'ask', 'open_ticks': 15, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 11:34:49,902 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17711.25
+2024-04-30 11:34:49,902 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17711.25
+2024-04-30 11:34:49,902 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17711.25
+2024-04-30 11:35:09,857 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'ask', 'open_ticks': 15, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 11:35:09,857 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'ask', 'open_ticks': 15, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 11:35:09,857 - __main__ - INFO - {'strategy': 'SELL TO OPEN SCALP 0.1', 'contract': 'NQM2024', 'tick_increment': 0.25, 'open_qty': 1, 'open_type': 'LIMIT', 'open_action': 'SELL', 'open_ref': 'ask', 'open_ticks': 15, 'close_qty': 1, 'close_type': 'LIMIT', 'close_action': 'BUY', 'close_ref': 'open_price_fill', 'close_ticks': -10}
+2024-04-30 11:35:09,865 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17719.25
+2024-04-30 11:35:09,865 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17719.25
+2024-04-30 11:35:09,865 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17719.25
+2024-04-30 11:35:11,365 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:11,365 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:11,365 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:11,365 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:11,365 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:11,365 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:11,365 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:11,365 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:11,365 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:11,365 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:11,365 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:11,365 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:11,377 - __main__ - INFO - Current position:
+2024-04-30 11:35:11,377 - __main__ - INFO - Current position:
+2024-04-30 11:35:11,377 - __main__ - INFO - Current position:
+2024-04-30 11:35:11,378 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:11,378 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:11,378 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:16,383 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:16,383 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:16,383 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:16,383 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:16,383 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:16,383 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:16,384 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:16,384 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:16,384 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:16,385 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:16,385 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:16,385 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:16,398 - __main__ - INFO - Current position:
+2024-04-30 11:35:16,398 - __main__ - INFO - Current position:
+2024-04-30 11:35:16,398 - __main__ - INFO - Current position:
+2024-04-30 11:35:16,398 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:16,398 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:16,398 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:21,405 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:21,405 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:21,405 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:21,405 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:21,405 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:21,405 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:21,406 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:21,406 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:21,406 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:21,406 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:21,406 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:21,406 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:21,420 - __main__ - INFO - Current position:
+2024-04-30 11:35:21,420 - __main__ - INFO - Current position:
+2024-04-30 11:35:21,420 - __main__ - INFO - Current position:
+2024-04-30 11:35:21,420 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:21,420 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:21,420 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:26,424 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:26,424 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:26,424 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:26,424 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:26,424 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:26,424 - __main__ - INFO - Waiting to get filled L1 253828524 Submitted
+2024-04-30 11:35:26,425 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:26,425 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:26,425 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:26,425 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:26,425 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:26,425 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:26,437 - __main__ - INFO - Current position:
+2024-04-30 11:35:26,437 - __main__ - INFO - Current position:
+2024-04-30 11:35:26,437 - __main__ - INFO - Current position:
+2024-04-30 11:35:26,439 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:26,439 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:26,439 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:31,447 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:31,447 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:31,447 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:31,447 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17716.75
+2024-04-30 11:35:31,447 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17716.75
+2024-04-30 11:35:31,447 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17716.75
+2024-04-30 11:35:32,952 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:32,952 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:32,952 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:32,953 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:32,953 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:32,953 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:32,958 - __main__ - INFO - Current position:
+2024-04-30 11:35:32,958 - __main__ - INFO - Current position:
+2024-04-30 11:35:32,958 - __main__ - INFO - Current position:
+2024-04-30 11:35:32,959 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:32,959 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:32,959 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:37,964 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:37,964 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:37,964 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:37,965 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:37,965 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:37,965 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:37,965 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:37,965 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:37,965 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:37,977 - __main__ - INFO - Current position:
+2024-04-30 11:35:37,977 - __main__ - INFO - Current position:
+2024-04-30 11:35:37,977 - __main__ - INFO - Current position:
+2024-04-30 11:35:37,977 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:37,977 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:37,977 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:42,990 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:42,990 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:42,990 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:42,991 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:42,991 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:42,991 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:42,994 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:42,994 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:42,994 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:43,021 - __main__ - INFO - Current position:
+2024-04-30 11:35:43,021 - __main__ - INFO - Current position:
+2024-04-30 11:35:43,021 - __main__ - INFO - Current position:
+2024-04-30 11:35:43,022 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:43,022 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:43,022 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:48,027 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:48,027 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:48,027 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:48,027 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:48,027 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:48,027 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:48,028 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:48,028 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:48,028 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:48,036 - __main__ - INFO - Current position:
+2024-04-30 11:35:48,036 - __main__ - INFO - Current position:
+2024-04-30 11:35:48,036 - __main__ - INFO - Current position:
+2024-04-30 11:35:48,036 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:48,036 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:48,036 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:53,039 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:53,039 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:53,039 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:53,040 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:53,040 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:53,040 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:53,040 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:53,040 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:53,040 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:53,055 - __main__ - INFO - Current position:
+2024-04-30 11:35:53,055 - __main__ - INFO - Current position:
+2024-04-30 11:35:53,055 - __main__ - INFO - Current position:
+2024-04-30 11:35:53,055 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:53,055 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:53,055 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:58,059 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:58,059 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:58,059 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:35:58,059 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:58,059 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:58,059 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:35:58,059 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:58,059 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:58,059 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:35:58,074 - __main__ - INFO - Current position:
+2024-04-30 11:35:58,074 - __main__ - INFO - Current position:
+2024-04-30 11:35:58,074 - __main__ - INFO - Current position:
+2024-04-30 11:35:58,074 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:58,074 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:35:58,074 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:03,085 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:03,085 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:03,085 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:03,088 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:03,088 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:03,088 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:03,090 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:03,090 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:03,090 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:03,113 - __main__ - INFO - Current position:
+2024-04-30 11:36:03,113 - __main__ - INFO - Current position:
+2024-04-30 11:36:03,113 - __main__ - INFO - Current position:
+2024-04-30 11:36:03,113 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:03,113 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:03,113 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:08,122 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:08,122 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:08,122 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:08,123 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:08,123 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:08,123 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:08,124 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:08,124 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:08,124 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:08,142 - __main__ - INFO - Current position:
+2024-04-30 11:36:08,142 - __main__ - INFO - Current position:
+2024-04-30 11:36:08,142 - __main__ - INFO - Current position:
+2024-04-30 11:36:08,142 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:08,142 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:08,142 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:13,148 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:13,148 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:13,148 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:13,148 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:13,148 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:13,148 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:13,149 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:13,149 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:13,149 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:13,159 - __main__ - INFO - Current position:
+2024-04-30 11:36:13,159 - __main__ - INFO - Current position:
+2024-04-30 11:36:13,159 - __main__ - INFO - Current position:
+2024-04-30 11:36:13,159 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:13,159 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:13,159 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:18,163 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:18,163 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:18,163 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:18,164 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:18,164 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:18,164 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:18,165 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:18,165 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:18,165 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:18,178 - __main__ - INFO - Current position:
+2024-04-30 11:36:18,178 - __main__ - INFO - Current position:
+2024-04-30 11:36:18,178 - __main__ - INFO - Current position:
+2024-04-30 11:36:18,179 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:18,179 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:18,179 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:23,183 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:23,183 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:23,183 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:23,183 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:23,183 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:23,183 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:23,685 - __main__ - INFO - Close trade filled @ 17716.75
+2024-04-30 11:36:23,685 - __main__ - INFO - Close trade filled @ 17716.75
+2024-04-30 11:36:23,685 - __main__ - INFO - Close trade filled @ 17716.75
+2024-04-30 11:36:23,686 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:23,686 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:23,686 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:23,697 - __main__ - INFO - Current position:
+2024-04-30 11:36:23,697 - __main__ - INFO - Current position:
+2024-04-30 11:36:23,697 - __main__ - INFO - Current position:
+2024-04-30 11:36:23,697 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:23,697 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:23,697 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:28,703 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17722.5
+2024-04-30 11:36:28,703 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17722.5
+2024-04-30 11:36:28,703 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17722.5
+2024-04-30 11:36:30,223 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:30,223 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:30,223 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:30,223 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:30,223 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:30,223 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:30,224 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:30,224 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:30,224 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:30,224 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:30,224 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:30,224 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:30,228 - __main__ - INFO - Current position:
+2024-04-30 11:36:30,228 - __main__ - INFO - Current position:
+2024-04-30 11:36:30,228 - __main__ - INFO - Current position:
+2024-04-30 11:36:30,229 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:30,229 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:30,229 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:35,234 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:35,234 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:35,234 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:35,234 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:35,234 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:35,234 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:35,235 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:35,235 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:35,235 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:35,235 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:35,235 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:35,235 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:35,241 - __main__ - INFO - Current position:
+2024-04-30 11:36:35,241 - __main__ - INFO - Current position:
+2024-04-30 11:36:35,241 - __main__ - INFO - Current position:
+2024-04-30 11:36:35,241 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:35,241 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:35,241 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:40,246 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:40,246 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:40,246 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:40,246 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:40,246 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:40,246 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:40,247 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:40,247 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:40,247 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:40,247 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:40,247 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:40,247 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:40,257 - __main__ - INFO - Current position:
+2024-04-30 11:36:40,257 - __main__ - INFO - Current position:
+2024-04-30 11:36:40,257 - __main__ - INFO - Current position:
+2024-04-30 11:36:40,257 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:40,257 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:40,257 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:45,263 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:45,263 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:45,263 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:45,263 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:45,263 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:45,263 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:45,263 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:45,263 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:45,263 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:45,264 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:45,264 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:45,264 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:45,272 - __main__ - INFO - Current position:
+2024-04-30 11:36:45,272 - __main__ - INFO - Current position:
+2024-04-30 11:36:45,272 - __main__ - INFO - Current position:
+2024-04-30 11:36:45,273 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:45,273 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:45,273 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:50,281 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:50,281 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:50,281 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:50,281 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:50,281 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:50,281 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:50,281 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:50,281 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:50,281 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:50,282 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:50,282 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:50,282 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:50,290 - __main__ - INFO - Current position:
+2024-04-30 11:36:50,290 - __main__ - INFO - Current position:
+2024-04-30 11:36:50,290 - __main__ - INFO - Current position:
+2024-04-30 11:36:50,291 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:50,291 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:50,291 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:55,299 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:55,299 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:55,299 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:36:55,299 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:55,299 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:55,299 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:36:55,299 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:55,299 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:55,299 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:36:55,299 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:55,299 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:55,299 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:36:55,306 - __main__ - INFO - Current position:
+2024-04-30 11:36:55,306 - __main__ - INFO - Current position:
+2024-04-30 11:36:55,306 - __main__ - INFO - Current position:
+2024-04-30 11:36:55,306 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:55,306 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:36:55,306 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:00,310 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:00,310 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:00,310 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:00,310 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:37:00,310 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:37:00,310 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:37:00,311 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:00,311 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:00,311 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:00,311 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:00,311 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:00,311 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:00,320 - __main__ - INFO - Current position:
+2024-04-30 11:37:00,320 - __main__ - INFO - Current position:
+2024-04-30 11:37:00,320 - __main__ - INFO - Current position:
+2024-04-30 11:37:00,320 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:00,320 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:00,320 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:05,326 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:05,326 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:05,326 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:05,326 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:37:05,326 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:37:05,326 - __main__ - INFO - Waiting to get filled L1 253828526 Submitted
+2024-04-30 11:37:05,326 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:05,326 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:05,326 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:05,326 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:05,326 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:05,326 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:05,340 - __main__ - INFO - Current position:
+2024-04-30 11:37:05,340 - __main__ - INFO - Current position:
+2024-04-30 11:37:05,340 - __main__ - INFO - Current position:
+2024-04-30 11:37:05,341 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:05,341 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:05,341 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:10,345 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:10,345 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:10,345 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:10,345 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17720.0
+2024-04-30 11:37:10,345 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17720.0
+2024-04-30 11:37:10,345 - __main__ - INFO - Placing close trade: BUY, LIMIT, totalQuantity 1, lmtPrice 17720.0
+2024-04-30 11:37:11,856 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:11,856 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:11,856 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:11,857 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:11,857 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:11,857 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:11,863 - __main__ - INFO - Current position:
+2024-04-30 11:37:11,863 - __main__ - INFO - Current position:
+2024-04-30 11:37:11,863 - __main__ - INFO - Current position:
+2024-04-30 11:37:11,863 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:11,863 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:11,863 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:16,868 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:16,868 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:16,868 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:16,869 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:16,869 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:16,869 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:16,869 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:16,869 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:16,869 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:16,876 - __main__ - INFO - Current position:
+2024-04-30 11:37:16,876 - __main__ - INFO - Current position:
+2024-04-30 11:37:16,876 - __main__ - INFO - Current position:
+2024-04-30 11:37:16,876 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:16,876 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:16,876 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:21,881 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:21,881 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:21,881 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:21,883 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:21,883 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:21,883 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:21,885 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:21,885 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:21,885 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:21,893 - __main__ - INFO - Current position:
+2024-04-30 11:37:21,893 - __main__ - INFO - Current position:
+2024-04-30 11:37:21,893 - __main__ - INFO - Current position:
+2024-04-30 11:37:21,894 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:21,894 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:21,894 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:26,898 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:26,898 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:26,898 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:26,898 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:26,898 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:26,898 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:26,899 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:26,899 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:26,899 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:26,906 - __main__ - INFO - Current position:
+2024-04-30 11:37:26,906 - __main__ - INFO - Current position:
+2024-04-30 11:37:26,906 - __main__ - INFO - Current position:
+2024-04-30 11:37:26,907 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:26,907 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:26,907 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:31,913 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:31,913 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:31,913 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:31,913 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:31,913 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:31,913 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:31,914 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:31,914 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:31,914 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:31,921 - __main__ - INFO - Current position:
+2024-04-30 11:37:31,921 - __main__ - INFO - Current position:
+2024-04-30 11:37:31,921 - __main__ - INFO - Current position:
+2024-04-30 11:37:31,921 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:31,921 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:31,921 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:36,927 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:36,927 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:36,927 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:36,928 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:36,928 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:36,928 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:37,441 - __main__ - INFO - Close trade filled @ 17720.0
+2024-04-30 11:37:37,441 - __main__ - INFO - Close trade filled @ 17720.0
+2024-04-30 11:37:37,441 - __main__ - INFO - Close trade filled @ 17720.0
+2024-04-30 11:37:37,442 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:37,442 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:37,442 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:37,449 - __main__ - INFO - Current position:
+2024-04-30 11:37:37,449 - __main__ - INFO - Current position:
+2024-04-30 11:37:37,449 - __main__ - INFO - Current position:
+2024-04-30 11:37:37,449 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:37,449 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:37,449 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:42,454 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17727.25
+2024-04-30 11:37:42,454 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17727.25
+2024-04-30 11:37:42,454 - __main__ - INFO - Placing open trade: SELL, LIMIT, totalQuantity 1, lmtPrice 17727.25
+2024-04-30 11:37:43,975 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:43,975 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:43,975 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:43,976 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:43,976 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:43,976 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:43,976 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:43,976 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:43,976 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:43,976 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:43,976 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:43,976 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:43,981 - __main__ - INFO - Current position:
+2024-04-30 11:37:43,981 - __main__ - INFO - Current position:
+2024-04-30 11:37:43,981 - __main__ - INFO - Current position:
+2024-04-30 11:37:43,981 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:43,981 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:43,981 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:48,986 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:48,986 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:48,986 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:48,986 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:48,986 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:48,986 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:48,986 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:48,986 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:48,986 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:48,987 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:48,987 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:48,987 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:48,993 - __main__ - INFO - Current position:
+2024-04-30 11:37:48,993 - __main__ - INFO - Current position:
+2024-04-30 11:37:48,993 - __main__ - INFO - Current position:
+2024-04-30 11:37:48,993 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:48,993 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:48,993 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:53,998 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:53,998 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:53,998 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:53,999 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:53,999 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:53,999 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:53,999 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:53,999 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:53,999 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:54,000 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:54,000 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:54,000 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:54,006 - __main__ - INFO - Current position:
+2024-04-30 11:37:54,006 - __main__ - INFO - Current position:
+2024-04-30 11:37:54,006 - __main__ - INFO - Current position:
+2024-04-30 11:37:54,007 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:54,007 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:54,007 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:59,011 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:59,011 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:59,011 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:37:59,011 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:59,011 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:59,011 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:37:59,012 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:59,012 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:59,012 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:37:59,012 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:59,012 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:59,012 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:37:59,017 - __main__ - INFO - Current position:
+2024-04-30 11:37:59,017 - __main__ - INFO - Current position:
+2024-04-30 11:37:59,017 - __main__ - INFO - Current position:
+2024-04-30 11:37:59,017 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:59,017 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:37:59,017 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:04,023 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:04,023 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:04,023 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:04,023 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:04,023 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:04,023 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:04,024 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:04,024 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:04,024 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:04,025 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:04,025 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:04,025 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:04,034 - __main__ - INFO - Current position:
+2024-04-30 11:38:04,034 - __main__ - INFO - Current position:
+2024-04-30 11:38:04,034 - __main__ - INFO - Current position:
+2024-04-30 11:38:04,034 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:04,034 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:04,034 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:09,038 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:09,038 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:09,038 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:09,039 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:09,039 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:09,039 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:09,039 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:09,039 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:09,039 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:09,039 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:09,039 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:09,039 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:09,047 - __main__ - INFO - Current position:
+2024-04-30 11:38:09,047 - __main__ - INFO - Current position:
+2024-04-30 11:38:09,047 - __main__ - INFO - Current position:
+2024-04-30 11:38:09,047 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:09,047 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:09,047 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:14,051 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:14,051 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:14,051 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:14,053 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:14,053 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:14,053 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:14,053 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:14,053 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:14,053 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:14,054 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:14,054 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:14,054 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:14,065 - __main__ - INFO - Current position:
+2024-04-30 11:38:14,065 - __main__ - INFO - Current position:
+2024-04-30 11:38:14,065 - __main__ - INFO - Current position:
+2024-04-30 11:38:14,066 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:14,066 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:14,066 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:19,070 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:19,070 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:19,070 - __main__ - INFO - OPEN ORDER::
+2024-04-30 11:38:19,071 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:19,071 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:19,071 - __main__ - INFO - Waiting to get filled L1 253828528 Submitted
+2024-04-30 11:38:19,071 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:19,071 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:19,071 - __main__ - INFO - CLOSE ORDER::
+2024-04-30 11:38:19,071 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:19,071 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:19,071 - __main__ - INFO - ALL OPEN ORDERS:
+2024-04-30 11:38:19,082 - __main__ - INFO - Current position:
+2024-04-30 11:38:19,082 - __main__ - INFO - Current position:
+2024-04-30 11:38:19,082 - __main__ - INFO - Current position:
+2024-04-30 11:38:19,083 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:19,083 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025
+2024-04-30 11:38:19,083 - __main__ - INFO - NQ:  -3.0 @ 17782.8322293025

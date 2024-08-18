@@ -1,0 +1,8 @@
+2024-06-12 15:43:00,368 ib_async.client INFO Connecting to 192.168.1.36:4001 with clientId 29...
+2024-06-12 15:43:00,540 ib_async.client INFO Connected
+2024-06-12 15:43:00,546 ib_async.client INFO Disconnected.
+2024-06-12 15:43:04,196 ib_async.client INFO Connecting to 192.168.1.36:4001 with clientId 59...
+2024-06-12 15:43:04,323 ib_async.client INFO Connected
+2024-06-12 15:43:04,331 ib_async.client INFO Disconnected.
+2024-06-12 15:43:08,326 ib_async.client INFO Disconnecting
+2024-06-12 15:43:08,328 ib_async.client ERROR API connection failed: TimeoutError()
